@@ -1,22 +1,16 @@
+let input;
 let total = 0;
 
-while (true) {
-    let input = prompt('Введите число');
+while (input !== null) {
+  input = prompt("Введите число");
 
-    if (input === null) {
-        break;
-    }
+  if (!+input && input) {
+    alert("Было введено не число, попробуйте еще раз");
 
-    input = Number(input);
-    
-    const noaANumber = Number.isNaN(input);
-
-    if (noaANumber) {
-        alert('Было введено не число, попробуйте еще раз')
-        continue;
-    }
-
-    total += input;
+  } else {
+        total += +input;
+  }
+ 
 }
 
-console.log(`Общая сумма ${total}`);
+alert(`Общая сумма чисел ${total}`);

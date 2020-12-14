@@ -9,7 +9,7 @@ let lackOfCredits;
 
 if (qantity === null) {
     message = 'Отменено пользователем!';
-} else if (Number.isNaN(Number(qantity))) {
+} else if (!+qantity) {
     message = 'Вы ввели неверные данные!';
 } else {
     totalPrice = Number(qantity) * pricePerDroid;
