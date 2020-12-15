@@ -1,10 +1,11 @@
 let country;
 let price;
+let message = 'Отменено пользователем';
+let isValid = true;
 
 let userInput = prompt('Введите название страны');
-userInput = userInput.toLowerCase()
-
-switch (userInput) {
+if (userInput !== null) {
+    switch (userInput.toLowerCase()) {
     case 'китай':
         country = 'Китай';
         price = 100;
@@ -30,9 +31,17 @@ switch (userInput) {
         price = 120;
         break;
     
-    default:
-        alert('В вашей стране доставка не доступна');
+        default:
+        isValid = false;
+        message = 'В вашей стране доставка не доступна';
+    } 
+} else {
+    isValid = false;
+} 
+
+if (isValid) {
+    message = `Доставка в ${country} будет стоить ${price} кредитов`;
 }
 
-alert(`Доставка в ${country} будет стоить ${price} кредитов`);
+alert(message);
 
